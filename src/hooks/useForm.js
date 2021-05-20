@@ -17,4 +17,4 @@ export const useForm = e => {
     };
 
     return [data, onInputChange]
-}
+};
