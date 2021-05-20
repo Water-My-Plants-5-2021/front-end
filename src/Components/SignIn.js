@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function SignUp() {
     const [data, setData] = useState({
         username: ``,
-        phonenumber: ``,
+        phoneNumber: ``,
         password: ``
     });
 
@@ -52,12 +52,12 @@ export default function SignUp() {
 
                 <input>
                     <div>
-                        <label htmlFor="phonenumber"> Phone Number </label>
+                        <label htmlFor="phoneNumber"> Phone Number </label>
                     </div>
                     <input
-                        id="phonenumber"
+                        id="phoneNumber"
                         type="text"
-                        name="phonenumber"
+                        name="phoneNumber"
                         placeholder="Phone Number"
                         onChange={onInputChange}
                     />
