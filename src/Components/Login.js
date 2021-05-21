@@ -41,34 +41,29 @@ export default function Form() {
     return (
         <div className="form" >
             <form onSubmit={(event) => { event.preventDefault(); onFormSubmit(); }}>
-                <input>
-                    <div>
-                        <label htmlFor="username"> Username </label>
-                    </div>
-                    <input
-                        id="username"
-                        type="text"
-                        name="username"
-                        placeholder="Username / Email"
-                        onChange={onInputChange}
-                    />
-                </input>
+                <div>
+                    <label htmlFor="username"> Username </label>
+                </div>
+                <input
+                    id="username"
+                    type="text"
+                    name="username"
+                    placeholder="Username / Email"
+                    onChange={onInputChange}
+                />
 
-                <input>
-                    <div>
-                        <label htmlFor="password"> Password </label>
-                    </div>
-                    <input
-                        id="password"
-                        name="password"
-                        type="password"
-                        placeholder="Password"
-                        onChange={onInputChange}
-                    />
-                    
-                        <button className="loginButton" type='submit'>Login</button>
-                    
-                </input>
+                <div>
+                    <label htmlFor="password"> Password </label>
+                </div>
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    onChange={onInputChange}
+                />
+                
+                <button className="loginButton" type='submit'>Login</button>                   
             </form>
         </div>
     )
