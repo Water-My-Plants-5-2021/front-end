@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+
+html{
+  background-image:url('./Images/HousePlants.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navigation{
+  display:flex;  
+  text-align: center;  
+  justify-content: space-evenly;
+  font-size:x-large;
+}
+
+.navigation a{
+  background-color:black;
+  border-radius: 40px;
+  width:150px;
+  height: 30px;
+  padding: 10px 10px 10px 10px;
+  border:1px solid green;
+  text-decoration: none;
+  color:green;
+  opacity:0.8;
+}
+
+.container{
+  
+  box-sizing: border-box;
+  border-radius: 10%;
+  box-shadow: 1px 2px 3px green;
+  background-color: black;  
+  height: 300px;
+  width:800px;
+  margin-top:5%;
+  margin-left: 13%;   
+  margin-bottom: 1%; 
+  border:1px solid green;  
+  opacity:0.8;
+  color:green;
+  text-align: center;
+  font-size: larger;
+  
+}
+
+.App{
+  justify-content: center;
+  animation:scaleUp 1.5s linear;
+}
+
+
+
+
+
+@keyframes scaleUp {
+  from{
+    transform: scale(0) rotateX(0deg);
+  }
+
+  to{
+    transform: scale(1) rotateX(360deg);
+  }
+
+  
 }
