@@ -9,10 +9,14 @@ export default function Form() {
         password: ''
     });
 
-    const getLogin = (() => {
-        axios.post(``)
+    const getLogin = ((e) => {
+        e.preventDefault()
+        axios.post(``,data)
         .then(response => {
             console.log(Object.values(response.data));
+            localStorage.setItem('token',response.data.payload)
+            // After successful post. Route to user's individual page.
+         //   this.props.history.push('/UserPage')
           })
           .catch(err => { console.log(err) });
       })
@@ -31,16 +35,12 @@ export default function Form() {
         })
     };
 
-    const onFormSubmit = () => {
-        console.log('Login Submitted and Displayed on Next Line');
-        console.log(data);
-
-    }
+    
 
 
     return (
         <div className="form" >
-            <form onSubmit={(event) => { event.preventDefault(); onFormSubmit(); }}>
+            <form onSubmit={ getLogin }>
                 <div>
                     <label htmlFor="username"> Username </label>
                 </div>
