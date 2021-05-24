@@ -11,10 +11,9 @@ export default function Form() {
 
     const getLogin = ((e) => {
         e.preventDefault()
-        axios.post(``,data)
+        axios.post(`https://watermyplants-bw.herokuapp.com/api/login`,data)
         .then(response => {
-            console.log(Object.values(response.data));
-            localStorage.setItem('token',response.data.payload)
+            localStorage.setItem('token', response.data.token)
             // After successful post. Route to user's individual page.
          //   this.props.history.push('/UserPage')
           })
