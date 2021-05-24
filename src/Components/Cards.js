@@ -7,7 +7,7 @@ export default function Cards() {
     const [plantData, setPlantData] = useState(null);
 
     const getPlants = (() => {
-        axios.get(`https://water-my-plants-2020.herokuapp.com/plants`)
+        axios.get(``)
           .then(response => {
             setPlantData(Object.values(response.data));
             console.log(Object.values(response.data));
