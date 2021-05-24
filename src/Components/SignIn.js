@@ -8,8 +8,8 @@ export default function SignUp() {
 
     const [data, setData] = useState({
         username: ``,
-        phoneNumber: ``,
-        password: ``
+        password: ``,
+        phoneNumber: ``
     });
 
     const onInputChange = event => {
@@ -21,13 +21,11 @@ export default function SignUp() {
 
     const onFormSubmit = e => {
         e.preventDefault();
-        axios.post("https://reqres.in/api/api/register", data)
-        //This will be changed to the actual endpoint later.
+        axios.post("https://watermyplants-bw.herokuapp.com/api/register", data)
             .then(res => {
                 console.log(res.data)
-                push("/login")
+                push("/Login")
             })
-        //Because we're adding a user to the database and never showing the full list of users on the application, we don't need to update state here, so I'm just going to send them to the login page.
             .catch(err => console.log(err.message))
     }
 
