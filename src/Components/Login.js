@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from "react-router"
 import axios from 'axios'
 
 export default function Form() {
-
 
     const [data, setData] = useState({
         username: '',
         password: ''
     });
 
+    const { push } = useHistory();
+
     const getLogin = ((e) => {
         e.preventDefault()
         axios.post(`https://watermyplants-bw.herokuapp.com/api/login`,data)
         .then(response => {
             localStorage.setItem('token', response.data.token)
-            // After successful post. Route to user's individual page.
-         //   this.props.history.push('/UserPage')
+            push("/user")
           })
           .catch(err => { console.log(err) });
       })

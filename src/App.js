@@ -1,10 +1,12 @@
-import { Route ,Switch} from "react-router-dom";
+import { Route, Switch} from "react-router-dom";
 
 
-import Login from "./Components/Login"
-import SignIn from "./Components/SignIn"
-import Navigation from './Components/Navigation'
+import Cards from "./Components/Cards"
 import Home from './Components/Home'
+import Login from "./Components/Login"
+import Navigation from './Components/Navigation'
+import ProtectedRoute from "./utils/ProtectedRoute"
+import SignIn from "./Components/SignIn"
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path='/SignIn'>
           <SignIn/>
         </Route>
+        <ProtectedRoute exact path="/user" component={Cards} />
       </Switch>
       
       
