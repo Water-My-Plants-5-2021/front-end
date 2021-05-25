@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Card from './Card'
+import axiosWithAuth from "../utils/axiosWithAuth";
 
+import Card from './Card'
 
 export default function Cards() {
     const [plantData, setPlantData] = useState(null);
 
     const getPlants = (() => {
-        axios.get(`https://water-my-plants-2020.herokuapp.com/plants`)
+        axiosWithAuth().get(`/sample`)
           .then(response => {
             setPlantData(Object.values(response.data));
             console.log(Object.values(response.data));
