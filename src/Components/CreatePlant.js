@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router";
-// import axios from "axios";
+import axiosWithAuth from "../utils/axiosWithAuth";
 
-export default function EditLogin() {
+export default function CreatePlant() {
 
-    // const {  } = useHistory();
+    const { push } = useHistory();
 
     const [data, setData] = useState({
         nickname: ``,
         species: ``,
+        h2oFrequency: "",
         image: ``
     });
 
@@ -19,13 +20,15 @@ export default function EditLogin() {
         })
     };
 
-    // const onFormSubmit = e => {
-    //     e.preventDefault();
-        
-    // }
+    const onFormSubmit = e => {
+        e.preventDefault();
+        axiosWithAuth().post("/api/plants", data)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))        
+    }
 
     return (
-        <div className="createplantlogin">
+        <div className="createPlant">
             <form onSubmit={onFormSubmit}>
                 <div>
                     <label><h2>Create the Plant</h2></label>
@@ -50,6 +53,17 @@ export default function EditLogin() {
                     type="text"
                     name="species"
                     placeholder="species"
+                    onChange={onInputChange}
+                />
+
+                <div>
+                    <label htmlFor="h2oFrequency"> h2o Frequency  </label>
+                </div>
+                <input
+                    id="h2oFrequency"
+                    type="text"
+                    name="h2oFrequency"
+                    placeholder="h2o Frequency"
                     onChange={onInputChange}
                 />
 

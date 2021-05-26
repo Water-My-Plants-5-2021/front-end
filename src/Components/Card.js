@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router";
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 export default function Card(props) {
     const { data } = props;
     
     const [isWatered, setIsWatered] = useState(data.watered);
+
+    const { push } = useHistory();
 
     const colorBasedOnState = currentState => {
         if(currentState === true){
@@ -18,6 +22,15 @@ export default function Card(props) {
         backgroundColor: colorBasedOnState(isWatered)
     }
 
+    const editPlant = () => {
+        push("/user/edit-plant")
+    }
+
+    const deletePlant = () => {
+        axiosWithAuth().delete("")
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
 
     if (data === null) {
         return (
@@ -37,6 +50,10 @@ export default function Card(props) {
                     <p>{`Watering Frequency: ${(data.h2oFrequency).toUpperCase()}`}</p>
                     <p></p>
                     <button onClick = {() => {setIsWatered(true)}} style={{width:'10em', margin: '0 auto'}}>Water</button>
+                </div>
+                <div>
+                    <button onClick={editPlant}>Edit</button>
+                    <button onClick={deletePlant}>Delete</button>
                 </div>
             </section>
         )
