@@ -9,6 +9,7 @@ import Navigation from './Components/Navigation'
 import ProtectedRoute from "./utils/ProtectedRoute"
 import SignIn from "./Components/SignIn"
 import UpdatePlant from "./Components/UpdatePlant"
+import EditLogin from "./Components/EditLogin"
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <ProtectedRoute exact path="/user" component={Cards} />
         <ProtectedRoute path="/user/add-plant" component={CreatePlant} />
         <ProtectedRoute path="/user/edit-plant" component={UpdatePlant} />
+        <ProtectedRoute path="/user/edit-user" component={EditLogin} />
       </Switch>
       
       
