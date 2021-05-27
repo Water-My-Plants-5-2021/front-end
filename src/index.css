@@ -6,7 +6,7 @@ html{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100%;  
+  background-attachment: fixed;
 }
 
 .navigation{
@@ -37,20 +37,22 @@ html{
   height: 300px;
   width:800px;
   margin-top:5%;
-  margin-left: 13%;   
+  margin-left: 10%;
   margin-bottom: 1%; 
+  margin-right: 10%;
   border:1px solid green;  
   opacity:0.8;
   color:green;
   text-align: center;
-  font-size: larger;
-  
+  font-size: larger;  
 }
 
-.App{
+.App{ 
   justify-content: center;
   animation:scaleUp 1.5s linear;
 }
+
+
 
 
 
