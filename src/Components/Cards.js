@@ -26,6 +26,15 @@ export default function Cards() {
         push("/user/add-plant");
       }
 
+      const editUserInfo = () => {
+        push("/user/edit-user")
+      }
+
+      const logOut = () => {
+        localStorage.removeItem('token');
+        push("/")
+      }
+
    if (plantData === null) {
         return (
           <h2>LOADING...</h2>
@@ -35,6 +44,8 @@ export default function Cards() {
         return (
           <div>
             <button onClick={addPlant}>Add Plant</button>
+            <button onClick={editUserInfo}>Edit User Info</button>
+            <button onClick={logOut}>Log Out</button>
             {plantData.map((char, index )=> 
             { return <Card key={index} data={char} /> })}
           </div>
