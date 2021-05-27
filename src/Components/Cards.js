@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from "react-router";
 import axiosWithAuth from "../utils/axiosWithAuth";
 
 import Card from './Card'
 
 export default function Cards() {
     const [plantData, setPlantData] = useState(null);
+
+    const { push } = useHistory();
 
     const getPlants = (() => {
         axiosWithAuth().get(`/sample`)
@@ -17,8 +20,11 @@ export default function Cards() {
 
       useEffect(() => {
           getPlants();
-          console.log(plantData);
       }, [])
+
+      const addPlant = () => {
+        push("/user/add-plant");
+      }
 
    if (plantData === null) {
         return (
@@ -28,6 +34,7 @@ export default function Cards() {
       else {
         return (
           <div>
+            <button onClick={addPlant}>Add Plant</button>
             {plantData.map((char, index )=> 
             { return <Card key={index} data={char} /> })}
           </div>

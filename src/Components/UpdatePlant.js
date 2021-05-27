@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router";
-// import axios from "axios";
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 export default function EditLogin() {
 
@@ -19,13 +19,15 @@ export default function EditLogin() {
         })
     };
 
-    // const onFormSubmit = e => {
-    //     e.preventDefault();
-        
-    // }
+    const onFormSubmit = e => {
+        e.preventDefault();
+        axiosWithAuth().put("", data)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }
 
     return (
-        <div className="updateplantlogin">
+        <div className="updatePlant">
             <form onSubmit={onFormSubmit}>
                 <div>
                     <label><h2>Update the Plant</h2></label>
