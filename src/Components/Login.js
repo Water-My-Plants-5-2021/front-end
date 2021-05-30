@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from "react-router"
 import axios from 'axios'
 
@@ -21,22 +21,12 @@ export default function Form() {
           .catch(err => { console.log(err) });
       })
 
-      
-      
-
-    // useEffect(() => {
-    //     console.log(data);
-    // }, [data])
-
     const onInputChange = event => {
         setData({
             ...data,
             [event.target.name]: event.target.value
         })
     };
-
-    
-
 
     return (
         <div className="form" >

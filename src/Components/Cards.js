@@ -10,7 +10,7 @@ export default function Cards() {
     const { push } = useHistory();
 
     const getPlants = (() => {
-        axiosWithAuth().get(`/sample`)
+        axiosWithAuth().get(`/api2/plants`)
           .then(response => {
             setPlantData(Object.values(response.data));
             console.log(Object.values(response.data));

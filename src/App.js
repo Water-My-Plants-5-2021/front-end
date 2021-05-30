@@ -30,7 +30,7 @@ function App() {
         </Route>
         <ProtectedRoute exact path="/user" component={Cards} />
         <ProtectedRoute path="/user/add-plant" component={CreatePlant} />
-        <ProtectedRoute path="/user/edit-plant" component={UpdatePlant} />
+        <ProtectedRoute path="/user/edit-plant/:id" component={UpdatePlant} />
         <ProtectedRoute path="/user/edit-user" component={EditLogin} />
       </Switch>
       
