@@ -1,71 +1,63 @@
-
-
-
-html{
-  background-image:url('./Images/HousePlants.jpeg');
+html {
+  background-image: url("./Images/HousePlants.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.navigation{
-  display:flex;  
-  text-align: center;  
+.navigation {
+  display: flex;
+  text-align: center;
   justify-content: space-evenly;
-  font-size:x-large;
+  font-size: x-large;
 }
 
-.navigation a{
-  background-color:black;
+.navigation a {
+  background-color: black;
   border-radius: 40px;
-  width:150px;
+  width: 150px;
   height: 30px;
   padding: 10px 10px 10px 10px;
-  border:1px solid green;
+  border: 1px solid green;
   text-decoration: none;
-  color:green;
-  opacity:0.8;
+  color: green;
+  opacity: 0.8;
 }
 
-.container{
-  
+.container {
   box-sizing: border-box;
   border-radius: 10%;
   box-shadow: 1px 2px 3px green;
-  background-color: black;  
+  background-color: black;
   height: 300px;
-  width:800px;
-  margin-top:5%;
+  width: 800px;
+  margin-top: 5%;
   margin-left: 10%;
-  margin-bottom: 1%; 
+  margin-bottom: 1%;
   margin-right: 10%;
-  border:1px solid green;  
-  opacity:0.8;
-  color:green;
+  border: 1px solid green;
+  opacity: 0.8;
+  color: green;
   text-align: center;
-  font-size: larger;  
+  font-size: larger;
 }
 
-.App{ 
+.App {
   justify-content: center;
-  animation:scaleUp 1.5s linear;
+  animation: scaleUp 1.5s linear;
 }
 
-
-
-
-
-
+.plant-img {
+  width: 150px;
+}
 
 @keyframes scaleUp {
-  from{
+  from {
     transform: scale(0) rotateX(0deg);
   }
 
-  to{
+  to {
     transform: scale(1) rotateX(360deg);
   }
-
-  
 }

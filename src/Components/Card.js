@@ -42,7 +42,7 @@ export default function Card(props) {
             <section>
                 <div style={statusBarColor}><h4>{isWatered === true ? 'Plant Has Been Watered' : 'Plant Needs Water'}</h4></div>
                 <div>
-                    <img src={data.image} alt="A plant"></img>
+                {data.image ? <img className="plant-img" src={data.image} alt="A plant" /> : ""}
                 </div>
                 <div>
                     <h2>{data.nickname}</h2>
