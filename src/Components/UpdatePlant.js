@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
-import { useHistory } from "react-router";
+import React, { useState, useEffect } from 'react';
+import { useHistory, useParams } from "react-router";
 import axiosWithAuth from "../utils/axiosWithAuth";
 
 export default function EditLogin() {
 
-    // const {  } = useHistory();
+    const { push } = useHistory();
+    const { id } = useParams();
 
     const [data, setData] = useState({
         nickname: ``,
         species: ``,
+        h2oFrequency: "",
         image: ``
     });
+
+    useEffect(() => {
+        axiosWithAuth().get(`https://watermyplants-bw.herokuapp.com/api2/plants/${id}`)
+            .then(res => setData(res.data))
+            .catch(err => console.log(err))
+    }, [id])
 
     const onInputChange = event => {
         setData({
@@ -21,8 +29,8 @@ export default function EditLogin() {
 
     const onFormSubmit = e => {
         e.preventDefault();
-        axiosWithAuth().put("", data)
-        .then(res => console.log(res))
+        axiosWithAuth().put(`/api2/plants/${id}`, data)
+        .then(() => push("/user"))
         .catch(err => console.log(err))
     }
 
@@ -40,7 +48,7 @@ export default function EditLogin() {
                     id="nickname"
                     type="text"
                     name="nickname"
-                    placeholder="nickname"
+                    value={data.nickname}
                     onChange={onInputChange}
                 />
 
@@ -51,7 +59,18 @@ export default function EditLogin() {
                     id="species"
                     type="text"
                     name="species"
-                    placeholder="species"
+                    value={data.species}
+                    onChange={onInputChange}
+                />
+
+                <div>
+                    <label htmlFor="h2oFrequency"> h2o Frequency  </label>
+                </div>
+                <input
+                    id="h2oFrequency"
+                    type="text"
+                    name="h2oFrequency"
+                    value={data.h2oFrequency}
                     onChange={onInputChange}
                 />
 
@@ -62,7 +81,7 @@ export default function EditLogin() {
                     id="image"
                     type="text"
                     name="image"
-                    placeholder="image"
+                    value={data.image}
                     onChange={onInputChange}
                 />
                 

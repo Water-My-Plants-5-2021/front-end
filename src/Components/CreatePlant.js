@@ -22,8 +22,8 @@ export default function CreatePlant() {
 
     const onFormSubmit = e => {
         e.preventDefault();
-        axiosWithAuth().post("/api/plants", data)
-            .then(res => console.log(res))
+        axiosWithAuth().post("/api2/plants", data)
+            .then(res => push("/user"))
             .catch(err => console.log(err))        
     }
 
